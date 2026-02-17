@@ -1,0 +1,39 @@
+name: inventario_ventas_app
+description: Aplicación de inventario y ventas con reporte en PDF
+publish_to: 'none' # Mantener en none para proyectos locales
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Estado y gestión de datos
+  provider: ^6.0.5
+
+  # Para mostrar notificaciones tipo toast
+  fluttertoast: ^8.2.8
+
+  # Para generar PDFs
+  pdf: ^3.10.7
+
+  # Para mostrar/impresión de PDFs
+  printing: ^5.11.0
+
+  # Íconos de Cupertino
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.3
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+

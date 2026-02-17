@@ -1,0 +1,91 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter build apk
+
+## exception
+
+ProcessException: ProcessException: El sistema no puede encontrar el archivo especificado (at ../../runtime/bin/process_win.cc:556)
+  Command: C:\INVENTARIO_APP\inventario_ventas_app\android\gradlew.bat -q -Ptarget-platform=android-arm,android-arm64,android-x64 -Ptarget=lib\main.dart -Pbase-application-name=android.app.Application -Pdart-defines=RkxVVFRFUl9WRVJTSU9OPTMuMzguOQ==,RkxVVFRFUl9DSEFOTkVMPXN0YWJsZQ==,RkxVVFRFUl9HSVRfVVJMPWh0dHBzOi8vZ2l0aHViLmNvbS9mbHV0dGVyL2ZsdXR0ZXIuZ2l0,RkxVVFRFUl9GUkFNRVdPUktfUkVWSVNJT049NjczMjNkZTI4NQ==,RkxVVFRFUl9FTkdJTkVfUkVWSVNJT049NTg3YzE4Zjg3Mw==,RkxVVFRFUl9EQVJUX1ZFUlNJT049My4xMC44 -Pdart-obfuscation=false -Ptrack-widget-creation=true -Ptree-shake-icons=true assembleRelease
+
+```
+#0      _ProcessImpl._start (dart:io-patch/process_patch.dart:421:33)
+#1      Process.start (dart:io-patch/process_patch.dart:42:20)
+#2      LocalProcessManager.start (package:process/src/interface/local_process_manager.dart:42:22)
+#3      ErrorHandlingProcessManager.start.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:654:26)
+#4      _run (package:flutter_tools/src/base/error_handling_io.dart:514:20)
+#5      ErrorHandlingProcessManager.start (package:flutter_tools/src/base/error_handling_io.dart:652:12)
+#6      _DefaultProcessUtils.start (package:flutter_tools/src/base/process.dart:538:28)
+#7      _DefaultProcessUtils.stream (package:flutter_tools/src/base/process.dart:558:35)
+#8      AndroidGradleBuilder._runGradleTask (package:flutter_tools/src/android/gradle.dart:349:38)
+#9      AndroidGradleBuilder.buildGradleApp (package:flutter_tools/src/android/gradle.dart:569:32)
+<asynchronous suspension>
+#10     AndroidGradleBuilder.buildApk (package:flutter_tools/src/android/gradle.dart:234:5)
+<asynchronous suspension>
+#11     BuildApkCommand.runCommand (package:flutter_tools/src/commands/build_apk.dart:131:5)
+<asynchronous suspension>
+#12     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1559:27)
+<asynchronous suspension>
+#13     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#14     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+<asynchronous suspension>
+#15     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:487:9)
+<asynchronous suspension>
+#16     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#17     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:422:5)
+<asynchronous suspension>
+#18     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:104:11)
+<asynchronous suspension>
+#19     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#20     main (package:flutter_tools/executable.dart:103:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel stable, 3.38.9, on Microsoft Windows [Versi¢n 10.0.19045.6466], locale es-PE) [855ms]
+    [32m•[39m Flutter version 3.38.9 on channel stable at C:\flutter
+    [32m•[39m Upstream repository https://github.com/flutter/flutter.git
+    [32m•[39m Framework revision 67323de285 (3 weeks ago), 2026-01-28 13:43:12 -0800
+    [32m•[39m Engine revision 587c18f873
+    [32m•[39m Dart version 3.10.8
+    [32m•[39m DevTools version 2.51.1
+    [32m•[39m Feature flags: enable-web, enable-linux-desktop, enable-macos-desktop, enable-windows-desktop, enable-android,
+      enable-ios, cli-animations, enable-native-assets, omit-legacy-version-file, enable-lldb-debugging
+
+[32m[✓][39m Windows Version (10 Home Single Language 64 bits, 22H2, 2009) [2,1s]
+
+[31m[✗][39m Android toolchain - develop for Android devices [6,9s]
+    [32m•[39m Android SDK at C:\Users\user\AppData\Local\Android\sdk
+    [32m•[39m Emulator version 36.4.9.0 (build_id 14788078) (CL:N/A)
+    [31m✗[39m cmdline-tools component is missing.
+      Try installing or updating Android Studio.
+      Alternatively, download the tools from https://developer.android.com/studio#command-line-tools-only and make sure
+      to set the ANDROID_HOME environment variable.
+      See https://developer.android.com/studio/command-line for more details.
+
+[32m[✓][39m Chrome - develop for the web [438ms]
+    [32m•[39m Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[33m[!][39m Visual Studio - develop Windows apps (Visual Studio Community 2026 18.3.0) [436ms]
+    [32m•[39m Visual Studio at C:\Program Files\Microsoft Visual Studio\18\Community
+    [32m•[39m Visual Studio Community 2026 version 18.3.11505.172
+    [31m✗[39m The current Visual Studio installation is incomplete.
+      Please use Visual Studio Installer to complete the installation or reinstall Visual Studio.
+
+[32m[✓][39m Connected device (3 available) [512ms]
+    [32m•[39m Windows (desktop) • windows • windows-x64    • Microsoft Windows [Versi¢n 10.0.19045.6466]
+    [32m•[39m Chrome (web)      • chrome  • web-javascript • Google Chrome 144.0.7559.133
+    [32m•[39m Edge (web)        • edge    • web-javascript • Microsoft Edge 145.0.3800.58
+
+[32m[✓][39m Network resources [7,9s]
+    [32m•[39m All expected network resources are available.
+
+[33m![39m Doctor found issues in 2 categories.
+```
